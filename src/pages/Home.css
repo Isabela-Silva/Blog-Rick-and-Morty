@@ -1,0 +1,65 @@
+.tech-background {
+    background-color: #f8f9fa;
+    background-image: 
+      radial-gradient(circle at 25px 25px, rgba(0, 255, 255, 0.1) 2px, transparent 0),
+      radial-gradient(circle at 75px 75px, rgba(0, 255, 255, 0.1) 2px, transparent 0);
+    background-size: 100px 100px;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+  
+  .tech-title {
+    color: #1a1a2e;
+    text-shadow: 0 0 10px rgba(32, 178, 170, 0.3);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .tech-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #20b2aa, transparent);
+  }
+  
+  .tech-loader {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 5px solid rgba(32, 178, 170, 0.3);
+    border-radius: 50%;
+    border-top-color: #20b2aa;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Versão tecnológica para a paginação */
+  .pagination .page-link {
+    background-color: #f8f9fa;
+    color: #20b2aa;
+    border-color: #20b2aa;
+    transition: all 0.3s ease;
+  }
+  
+  .pagination .page-link:hover {
+    background-color: #20b2aa;
+    color: white;
+    box-shadow: 0 0 15px rgba(32, 178, 170, 0.5);
+  }
+  
+  .pagination .disabled .page-link {
+    background-color: #f8f9fa;
+    color: #adb5bd;
+    border-color: #dee2e6;
+  }

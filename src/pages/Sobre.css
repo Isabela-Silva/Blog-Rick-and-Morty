@@ -1,0 +1,310 @@
+/* Sobre.css */
+.sobre-container {
+    padding: 40px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+    background-color: #1a1a2e;
+    min-height: 100vh;
+  }
+  
+  .portal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at center, rgba(0, 255, 140, 0.1) 0%, transparent 70%),
+      linear-gradient(to right, rgba(20, 30, 48, 0.9), rgba(36, 59, 85, 0.9));
+    z-index: -1;
+  }
+  
+  .portal-background:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(white 1px, transparent 0),
+      radial-gradient(white 1px, transparent 0);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    opacity: 0.05;
+  }
+  
+  .sobre-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .glitch-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #00b0c8;
+    text-shadow: 
+      0 0 5px rgba(0, 176, 200, 0.5),
+      0 0 10px rgba(0, 176, 200, 0.3);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .glitch-title:before,
+  .glitch-title:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .glitch-title:before {
+    left: -2px;
+    text-shadow: 2px 0 #ff00ff;
+    animation: glitch-animation 3s infinite linear alternate-reverse;
+    clip: rect(44px, 450px, 56px, 0);
+  }
+  
+  .glitch-title:after {
+    left: 2px;
+    text-shadow: -2px 0 #00ffff;
+    animation: glitch-animation 2s infinite linear alternate-reverse;
+    clip: rect(24px, 450px, 36px, 0);
+  }
+  
+  @keyframes glitch-animation {
+    0% {
+      clip: rect(20px, 450px, 28px, 0);
+    }
+    20% {
+      clip: rect(42px, 450px, 78px, 0);
+    }
+    40% {
+      clip: rect(15px, 450px, 22px, 0);
+    }
+    60% {
+      clip: rect(60px, 450px, 74px, 0);
+    }
+    80% {
+      clip: rect(5px, 450px, 25px, 0);
+    }
+    100% {
+      clip: rect(50px, 450px, 85px, 0);
+    }
+  }
+  
+  .tech-line {
+    height: 3px;
+    width: 80%;
+    margin: 20px auto;
+    background: linear-gradient(90deg, transparent, #00b0c8, transparent);
+    position: relative;
+  }
+  
+  .tech-line:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    background-color: #00b0c8;
+    animation: tech-pulse 3s infinite;
+    box-shadow: 0 0 15px #00b0c8;
+    border-radius: 30px;
+  }
+  
+  @keyframes tech-pulse {
+    0% { left: 0; }
+    50% { left: calc(100% - 20px); }
+    100% { left: 0; }
+  }
+  
+  .about-intro {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+  }
+  
+  .intro-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #d1d1d1;
+    position: relative;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border-left: 3px solid #00b0c8;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .team-card {
+    background-color: rgba(20, 30, 48, 0.7);
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+      0 15px 30px rgba(0, 0, 0, 0.4),
+      0 0 15px var(--card-color, #00b0c8);
+    border-color: var(--card-color, #00b0c8);
+  }
+  
+  .team-card:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--card-color, #00b0c8),
+      transparent
+    );
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .team-card:hover:before {
+    opacity: 0.1;
+    animation: card-scanner 2s infinite;
+  }
+  
+  @keyframes card-scanner {
+    0% { top: -50%; }
+    100% { top: 150%; }
+  }
+  
+  .card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .member-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--card-color, #00b0c8);
+    margin-bottom: 5px;
+  }
+  
+  .member-role {
+    font-size: 16px;
+    color: #a0a0a0;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  
+  .member-role:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: var(--card-color, #00b0c8);
+    margin: 10px auto;
+  }
+  
+  .member-desc {
+    font-size: 14px;
+    color: #d1d1d1;
+  }
+  
+  .card-circuits {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-image: 
+      linear-gradient(90deg, transparent 50%, var(--card-color, #00b0c8) 50%),
+      linear-gradient(90deg, transparent 50%, var(--card-color, #00b0c8) 50%);
+    background-size: 10px 2px, 20px 2px;
+    background-position: 0 0, 0 5px;
+    opacity: 0.3;
+  }
+  
+  .join-us {
+    background-color: rgba(20, 30, 48, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 3px solid #00b0c8;
+  }
+  
+  .join-us h3 {
+    font-size: 24px;
+    color: #f0f0f0;
+    margin-bottom: 15px;
+  }
+  
+  .tech-button {
+    background: linear-gradient(90deg, #00b0c8, #0077b6);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    margin-top: 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .tech-button:hover {
+    box-shadow: 0 0 20px rgba(0, 176, 200, 0.6);
+    transform: translateY(-3px);
+  }
+  
+  .tech-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #0077b6, #00b0c8);
+    transition: all 0.4s ease;
+    z-index: -1;
+  }
+  
+  .tech-button:hover:before {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .sobre-container {
+      padding: 20px;
+    }
+    
+    .glitch-title {
+      font-size: 36px;
+    }
+    
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+  }
