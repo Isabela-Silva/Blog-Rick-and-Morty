@@ -44,7 +44,6 @@
     to { transform: rotate(360deg); }
   }
   
-  /* Versão tecnológica para a paginação */
   .pagination .page-link {
     background-color: #f8f9fa;
     color: #20b2aa;
