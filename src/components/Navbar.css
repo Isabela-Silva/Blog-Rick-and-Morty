@@ -1,97 +1,95 @@
-/* Estilo base da navbar */
 .tech-navbar {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    padding: 0.8rem 1rem;
+  background-color: #16213e;
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.tech-brand {
+  font-weight: 700;
+  color: #00ffff !important;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+
+.tech-logo {
+  background: linear-gradient(135deg, #00ffff, #0077ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+.tech-link {
+  color: white !important;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.tech-link:hover {
+  background: rgba(0, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 255, 255, 0.2);
+}
+
+.tech-icon {
+  margin-right: 6px;
+  color: #00ffff;
+}
+
+.tech-toggler {
+  border: 1px solid rgba(0, 255, 255, 0.5) !important;
+  padding: 0.25rem 0.5rem;
+}
+
+.tech-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 255, 255, 0.3) !important;
+}
+
+.tech-offcanvas {
+  background: #16213e !important;
+  color: white;
+  border-left: 1px solid rgba(0, 255, 255, 0.3);
+  box-shadow: -3px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.tech-offcanvas-header {
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+  padding: 1rem;
+}
+
+.tech-offcanvas .btn-close {
+  filter: invert(1) brightness(2);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+@media (max-width: 991.98px) {
+  .tech-nav {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
   
-  /* Estilo do brand */
-  .tech-brand {
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease;
-  }
-  
-  .tech-brand:hover {
-    color: #00ffff !important;
-    transform: scale(1.02);
-  }
-  
-  .tech-logo {
-    color: #00ffff;
-    margin-right: 10px;
-    font-size: 1.8rem;
-  }
-  
-  /* Estilo dos links */
   .tech-link {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    margin: 0 0.5rem;
-    padding: 0.5rem 1rem !important;
+    margin: 0.3rem 0;
+    padding: 0.8rem 1rem !important;
     border-radius: 4px;
     transition: all 0.3s ease;
-    position: relative;
   }
   
   .tech-link:hover {
-    color: #00ffff !important;
     background: rgba(0, 255, 255, 0.1);
+    transform: translateX(5px);
   }
   
-  .tech-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: #00ffff;
-    transition: all 0.3s ease;
+  .tech-offcanvas-body {
+    background: linear-gradient(to bottom, #16213e, #1b2a4e);
   }
-  
-  .tech-link:hover::after {
-    width: 70%;
-    left: 15%;
-  }
-  
-  /* Ícones */
-  .tech-icon {
-    margin-right: 8px;
-    font-size: 1.1rem;
-  }
-  
-  /* Botão toggler */
-  .tech-toggler {
-    border: 1px solid rgba(0, 255, 255, 0.3);
-  }
-  
-  .tech-toggler:focus {
-    box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.25);
-  }
-  
-  /* Responsividade */
-  @media (max-width: 991.98px) {
-    .tech-nav {
-      padding-top: 1rem;
-      background: rgba(10, 25, 47, 0.95);
-      border-radius: 8px;
-      margin-top: 0.5rem;
-      padding: 1rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-    
-    .tech-link {
-      margin: 0.3rem 0;
-      padding: 0.8rem !important;
-    }
-    
-    .tech-link:hover {
-      background: rgba(0, 255, 255, 0.15);
-    }
-  }
+}

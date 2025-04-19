@@ -1,48 +1,46 @@
 import { Link } from 'react-router-dom';
-import './Navbar.css'; // Arquivo CSS personalizado
+import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
+import './Navbar.css';
 
-export default function Navbar() {
+export default function TechNavbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark tech-navbar">
-      <div className="container-fluid">
-        <Link className="navbar-brand tech-brand" to="/">
+    <Navbar expand="lg" className="tech-navbar" variant="dark" collapseOnSelect>
+      <Container fluid>
+        <Navbar.Brand as={Link} to="/" className="tech-brand">
           <span className="tech-logo">{"</>"}</span> wubalibadublog
-        </Link>
+        </Navbar.Brand>
         
-        {/* Botão para mobile */}
-        <button 
-          className="navbar-toggler tech-toggler" 
-          type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#navbarTech"
-          aria-controls="navbarTech"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+        <Navbar.Toggle 
+          aria-controls="offcanvasNavbar" 
+          className="tech-toggler" 
+        />
+        
+        <Navbar.Offcanvas
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+          placement="end"
+          className="tech-offcanvas"
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        {/* Itens do menu */}
-        <div className="collapse navbar-collapse" id="navbarTech">
-          <ul className="navbar-nav ms-auto tech-nav">
-            <li className="nav-item">
-              <Link className="nav-link tech-link" to="/">
+          <Offcanvas.Header closeButton className="tech-offcanvas-header">
+            <Offcanvas.Title id="offcanvasNavbarLabel" className="tech-brand">
+              <span className="tech-logo">{"</>"}</span> Menu
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body className="tech-offcanvas-body">
+            <Nav className="justify-content-end flex-grow-1 pe-3 tech-nav">
+              <Nav.Link as={Link} to="/" className="tech-link">
                 <i className="bi bi-house-door tech-icon"></i> Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link tech-link" to="/sobre">
+              </Nav.Link>
+              <Nav.Link as={Link} to="/sobre" className="tech-link">
                 <i className="bi bi-person-gear tech-icon"></i> Sobre
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link tech-link" to="/contato">
+              </Nav.Link>
+              <Nav.Link as={Link} to="/contato" className="tech-link">
                 <i className="bi bi-envelope-at tech-icon"></i> Contato
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+              </Nav.Link>
+            </Nav>
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
+      </Container>
+    </Navbar>
   );
 }

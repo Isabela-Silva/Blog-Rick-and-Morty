@@ -649,7 +649,6 @@
     width: 100%;
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .post-container {
       padding: 20px 15px;
